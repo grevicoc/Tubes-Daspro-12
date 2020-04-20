@@ -2,9 +2,9 @@ import csv
 
 def load_file(object_file):
     csv_file = open(object_file, 'r')
-    reader = csv.DictReader(csv_file, delimiter = ',')
-    array_object = ['*' for i in range (30)]
-    i=0
+    reader = csv.DictReader(csv_file, delimiter = ',')  #object_file dibaca dan dimasukkan ke variable reader
+    array_object = ['*' for i in range (30)]            #array kosong didefinisikan bernilai 30
+    i=0                                                 #inisiasi variable untuk meng-akses array_object
     for row in reader:
         array_object[i] = row
         i += 1
