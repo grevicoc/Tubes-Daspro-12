@@ -1,4 +1,5 @@
 def Login_User():
+    print("$ login")
     username = input("Masukan username:")
     password = input("Masukan password:")
     for row in (array_user):
