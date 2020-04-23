@@ -1,5 +1,5 @@
 def riwayat_wahana():
-    id = input("Masukkan ID Wahana: ")
+    id = input("Masukkan ID Wahana: ")#Asumsi masukan ID Wahana valid
     print("Riwayat:")
     i = 0
     while ((array_penggunaan_tiket[i] != "*") and (i < 30)):  #Menelusuri Riwayat Penggunaan Tiket
