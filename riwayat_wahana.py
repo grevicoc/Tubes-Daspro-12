@@ -1,8 +1,8 @@
 def riwayat_wahana():
-    wahana = input("Masukkan ID Wahana: ")
+    id = input("Masukkan ID Wahana: ")
     print("Riwayat:")
     i = 0
-    while array_penggunaan_tiket[i]!= "*":
-            if array_penggunaan_tiket[i]['ID_Wahana'] == wahana:
-                print(array_penggunaan_tiket[i]['Tanggal_Penggunaan'],"|",array_penggunaan_tiket[i]['Username'],"|",array_penggunaan_tiket[i]['Jumlah_Tiket'])
-            i += 1
+    while ((array_penggunaan_tiket[i] != "*") and (i < 30)):  #Menelusuri Riwayat Penggunaan Tiket
+        if (array_penggunaan_tiket[i][2] == id):
+            print(array_penggunaan_tiket[i][1], "|", array_penggunaan_tiket[i][0], "|",array_penggunaan_tiket[i][3])
+        i += 1
