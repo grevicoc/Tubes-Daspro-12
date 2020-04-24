@@ -6,6 +6,6 @@ def Sign_Up():
     password = input("Masukan password pemain:")
     for i in range(30):
         if array_user[i] == "*" :
-            array_user[i] = [nama,birth,tinggi,username,password]
+            array_user[i] = [nama,birth,tinggi,username,password,"guest",0]
             
     print("Selamat menjadi pemain,",nama,". Selamat bermain.")
