@@ -12,11 +12,11 @@ def Login_User():
                 Login_user()
 
 def ambil_data(arr,x):
-    a = 0
+    array_login = 0
     for i in range(30):
         if (arr[i][3] == x):
-            a = arr[i]
-    return a
+            array_login = arr[i]
+    return array_login
         
     
     
