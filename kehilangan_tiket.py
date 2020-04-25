@@ -9,6 +9,10 @@ def kehilangan_tiket():
             array_hilang[i] = [username,tanggal,ID,jumlah]
             break
     kurang_tiket(array_kepemilikan_tiket,jumlah)       
+    print("")
+    print("Laporan kehilangan tiket anda telah direkam")
+
+
 
 def kurang_tiket(arr,jumlah):
     for j in range(30):
@@ -16,6 +20,5 @@ def kurang_tiket(arr,jumlah):
             if arr[j][1] == ID:
                 arr[j][2] = arr[j][2] - jumlah
     return arr
-    print("")
-    print("Laporan kehilangan tiket anda telah direkam")
+   
         
