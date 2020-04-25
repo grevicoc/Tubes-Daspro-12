@@ -10,7 +10,7 @@ def validasi_umur(object_lahir, tanggal, batas_umur):     #object_umur adalah um
     hari_user = int(object_lahir[0:2])
 
     if (hari_tanggal - hari_user) < 0:  #dengan penyederhanaan 1 bulan 30 hari dan tidak ada tahun kabisat
-        hari_tanggal += 30              #toh perbedaan 1-2 hari tidak terlalu 
+        hari_tanggal += 30              #toh perbedaan 1-2 hari tidak terlalu signifikan
         bulan_tanggal -= 1
         if (bulan_tanggal - bulan_user) < 0:
             bulan_tanggal += 12
@@ -45,6 +45,13 @@ def beli_tiket():
                 if user[2] >= array_wahana[i][4]:
                     if (user[6]-(tiket*int(array_wahana[i][2]))) > 0:
                         user[6] = user[6]-(tiket*int(array_wahana[i][2]))   #requirement terpenuhi, saldo berkurang
+                        j = 0
+                        while True:
+                            if array_pembelian_tiket[j] == '*':
+                                array_pembelian_tiket[j] = [user[3], tanggal, id, str(tiket)] #memasukkan riwayat pembelian tiket
+                                break
+                            else:
+                                j+=1
                         print(f"Selamat bermain di {array_wahana[i][1]}.")
                         break
                     else:
