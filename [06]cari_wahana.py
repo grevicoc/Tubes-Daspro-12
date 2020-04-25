@@ -29,6 +29,8 @@ def cari_wahana():
                         print(f"{array_wahana[i][0]} | {array_wahana[i][1]} | {array_wahana[i][2]}")
                         mark = True
                         i+=1
+                    else:
+                        i+=1
                 else:
                     print(f"{array_wahana[i][0]} | {array_wahana[i][1]} | {array_wahana[i][2]}")
                     mark = True
@@ -43,6 +45,8 @@ def cari_wahana():
                     if int(array_wahana[i][4]) > 130:
                         print(f"{array_wahana[i][0]} | {array_wahana[i][1]} | {array_wahana[i][2]}")
                         mark = True
+                        i+=1
+                    else:
                         i+=1
                 else:
                     print(f"{array_wahana[i][0]} | {array_wahana[i][1]} | {array_wahana[i][2]}")
