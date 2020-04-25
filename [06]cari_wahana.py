@@ -1,6 +1,3 @@
-import pandas
-import csv
-
 def cari_wahana():     
     print("Jenis batasan umur:")
     print("1. Anak-anak (<17 tahun)")
@@ -23,7 +20,7 @@ def cari_wahana():
     mark = False            #menandakan apakah wahana ditemukan atau tidak
 
     print("Hasil pencarian: ")
-    if age == '1':
+    if age == '1':          
         i=0
         while array_wahana[i] != '*':
             if int(array_wahana[i][3)] < 17:
@@ -55,17 +52,17 @@ def cari_wahana():
                 i+=1
     else:
         i=0
-        while array_user[i] != '*':
+        while array_wahana[i] != '*':
             if height == '1':
                     if int(array_wahana[i][4]) > 130:
                         print(f"{array_wahana[i][0]} | {array_wahana[i][1]} | {array_wahana[i][2]}")
                         mark = True
                         i+=1
-                else:
-                    print(f"{array_wahana[i][0]} | {array_wahana[i][1]} | {array_wahana[i][2]}")
-                    mark = True
-                    i+=1
+                    else:
+                        i+=1
             else:
+                print(f"{array_wahana[i][0]} | {array_wahana[i][1]} | {array_wahana[i][2]}")
+                mark = True
                 i+=1
     if mark == False:
         print("Tidak ada wahana yang sesuai dengan pencarian kamu.")
