@@ -1,4 +1,5 @@
 def Sign_Up():
+    print("$ signup")
     nama = input("Masukan nama pemain:")
     birth = input("Masukan tanggal lahir pemain:")
     tinggi = int(input("Masukan tinggi badan pemain (cm):"))
