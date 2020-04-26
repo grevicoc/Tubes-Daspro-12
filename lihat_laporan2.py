@@ -93,11 +93,11 @@ def Kritik_dan_Saran() :
 # lihat_laporan
 
 def Lihat_Kritik_dan_Saran():
-    e=0
+    e=0 # Menghitung jumlah Neff dalam array
     while(array_kritik_saran[e][0]!='*'):
         e=e+1
         
-    for k in range (1,e):
+    for k in range (1,e): # Mengurutkan berdasarkan karakter pertama dari ID Wahana dengan Insertion Sort
         temp=array_kritik_saran[k][2][0]
         tempgeser=array_kritik_saran[k]
         l=k-1
@@ -110,12 +110,12 @@ def Lihat_Kritik_dan_Saran():
             array_kritik_saran[l+1]=array_kritik_saran[l]
             array_kritik_saran[l]=tempgeser
     
-    for k in range (1,e):
+    for k in range (1,e): # Mengurutkan data yang memiliki karakter pertama yang sama berdasarkan karakter kedua dari ID Wahana dengan Insertion Sort
         temp=array_kritik_saran[k][2][1]
         temp1=array_kritik_saran[k][2][0]
         tempgeser=array_kritik_saran[k]
         l=k-1
-        if(temp1==array_kritik_saran[l][2][0]):
+        if(temp1==array_kritik_saran[l][2][0]): # Mengurutkan data yang memiliki karakter pertama dan kedua yang sama berdasarkan karakter ketiga dari ID Wahana dengan Insertion Sort
             while(temp<array_kritik_saran[l][2][1] and l>0):
                 array_kritik_saran[l+1]=array_kritik_saran[l]
                 l=l-1
@@ -126,7 +126,7 @@ def Lihat_Kritik_dan_Saran():
                 array_kritik_saran[l]=tempgeser
 
                 
-    for k in range (1,e):
+    for k in range (1,e): # Mengurutkan data yang memiliki karakter pertama dan kedua yang sama berdasarkan karakter ketiga dari ID Wahana dengan Insertion Sort
         temp=array_kritik_saran[k][2][2]
         temp1=array_kritik_saran[k][2][1]
         temp2=array_kritik_saran[k][2][0]
@@ -144,7 +144,7 @@ def Lihat_Kritik_dan_Saran():
             array_kritik_saran[l+1]=tempgeser
 
 
-    for k in range (1,e):
+    for k in range (1,e): # Mengurutkan data yang memiliki karakter pertama, kedua, dan ketiga yang sama berdasarkan karakter keempat dari ID Wahana dengan Insertion Sort
         temp=array_kritik_saran[k][2][3]
         temp1=array_kritik_saran[k][2][2]
         temp2=array_kritik_saran[k][2][1]
@@ -163,7 +163,7 @@ def Lihat_Kritik_dan_Saran():
             array_kritik_saran[l+1]=tempgeser
 
 
-    for k in range (1,e):
+    for k in range (1,e): # Mengurutkan data yang memiliki karakter pertama, kedua, ketiga, dan keempat yang sama berdasarkan karakter kelima dari ID Wahana dengan Insertion Sort
         temp=array_kritik_saran[k][2][4]
         temp1=array_kritik_saran[k][2][3]
         temp2=array_kritik_saran[k][2][2]
@@ -183,7 +183,7 @@ def Lihat_Kritik_dan_Saran():
             array_kritik_saran[l+1]=tempgeser
 
 
-    for k in range (1,e):
+    for k in range (1,e): # Mengurutkan data yang memiliki karakter pertama, kedua, ketiga, keempat, dan kelima yang sama berdasarkan karakter keenam dari ID Wahana dengan Insertion Sort
         temp=array_kritik_saran[k][2][5]
         temp1=array_kritik_saran[k][2][4]
         temp2=array_kritik_saran[k][2][3]
@@ -214,25 +214,25 @@ Lihat_Kritik_dan_Saran()
 
 def tambah_wahana():
 
-    print("Masukkan Informasi Wahana yang ditambahkan:")
+    print("Masukkan Informasi Wahana yang ditambahkan:") # Memasukkan informasi wahana yang ingin ditambahkan
     identitas=str(input("Masukkan ID Wahana: "))
     nama=str(input("Masukkan Nama Wahana: "))
     harga=input("Masukkan Harga Tiket: ")
     umur=str(input("Batasan umur: "))
     tinggi=str(input("Batasan tinggi badan: "))
         
-    d=0
+    d=0 # Menghitung Neff dari array wahana
     while(array_wahana[d][0]!='*'):
         d=d+1
         
-    array_wahana[d] = [identitas,nama,harga,umur,tinggi]
+    array_wahana[d] = [identitas,nama,harga,umur,tinggi] # Memasukkan informasi ke dalam array
 
     print("Info wahana telah ditambahkan!")
 
 # upgrade_gold
 
 def upgrade_gold():
-    userinput=str(input("Masukkan username yang ingin di-upgrade:"))
+    userinput=str(input("Masukkan username yang ingin di-upgrade:")) # Memasukkan informasi username yang ingin diupgrade
     
     k=0
     while(array_user[k]!='*'):   
