@@ -36,37 +36,71 @@ def beli_tiket():
     id = input("Masukkan ID wahana: ")
     tanggal = input("Masukkan tanggal hari ini: ")
     tiket = int(input("Masukkan jumlah tiket yang dibeli: "))
+    
+    k=0
+    while(array_user[k]!='*'):   # Menandai indeks array user
+            if(array_user[k][3]==user):
+                d=k
+            k=k+1
 
     while array_wahana != '*':
         if array_wahana[i][0] == id:            #asumsi wahana ditemukan dengan indeks i
             if validasi_umur(user[i][1], tanggal, array_wahana[i][3]):
                 if user[2] >= array_wahana[i][4]:
-                    if (user[6]-(tiket*int(array_wahana[i][2]))) > 0:
-                        user[6] = user[6]-(tiket*int(array_wahana[i][2]))   #requirement terpenuhi, saldo berkurang
-                        #mengisi riwayat pembelian tiket
-                        j = 0
-                        while True:
-                            if array_pembelian_tiket[j] == '*':
-                                array_pembelian_tiket[j] = [user[3], tanggal, id, str(tiket)] #memasukkan riwayat pembelian tiket
-                                break
-                            else:
-                                j+=1
-                        #mengisi riwayat kepemilikan tiket
-                        j = 0
-                        while array_kepemilikan_tiket != '*':
-                            if (array_kepemilikan_tiket[j][0] == user[3]) and (array_kepemilikan_tiket[j][1] == id) :   #jika ternyata pengguna sudah memiliki tiket wahana dan ingin menambah
-                                array_kepemilikan_tiket[j] = [user[3], id, str(int(array_kepemilikan_tiket[j][3]) + tiket)] 
-                                break
-                            else:
-                                j+=1
-                        else:       #jika pengguna belum memiliki tiket wahan tersebut
-                            array_kepemilikan_tiket[j] = [user[3], id, str(tiket)]
-                        print(f"Selamat bermain di {array_wahana[i][1]}.")
-                        break
+                    if(array_user[d][7]=='yes'): #Memeriksa status gold tiket
+                        if (user[6]-(tiket*int(array_wahana[i][2]/2))) > 0:
+                            user[6] = user[6]-(tiket*int(array_wahana[i][2]))   #requirement terpenuhi, saldo berkurang
+                            #mengisi riwayat pembelian tiket
+                            j = 0
+                            while True:
+                                if array_pembelian_tiket[j] == '*':
+                                    array_pembelian_tiket[j] = [user[3], tanggal, id, str(tiket)] #memasukkan riwayat pembelian tiket
+                                    break
+                                else:
+                                    j+=1
+                            #mengisi riwayat kepemilikan tiket
+                            j = 0
+                            while array_kepemilikan_tiket != '*':
+                                if (array_kepemilikan_tiket[j][0] == user[3]) and (array_kepemilikan_tiket[j][1] == id) :   #jika ternyata pengguna sudah memiliki tiket wahana dan ingin menambah
+                                    array_kepemilikan_tiket[j] = [user[3], id, str(int(array_kepemilikan_tiket[j][3]) + tiket)] 
+                                    break
+                                else:
+                                    j+=1
+                            else:       #jika pengguna belum memiliki tiket wahan tersebut
+                                array_kepemilikan_tiket[j] = [user[3], id, str(tiket)]
+                            print(f"Selamat bermain di {array_wahana[i][1]}.")
+                            break
+                        else:
+                            print("Saldo Anda tidak cukup.")
+                            print("Silakan mengisi saldo Anda.")
+                            break
                     else:
-                        print("Saldo Anda tidak cukup.")
-                        print("Silakan mengisi saldo Anda.")
-                        break    
+                        if (user[6]-(tiket*int(array_wahana[i][2]))) > 0:
+                            user[6] = user[6]-(tiket*int(array_wahana[i][2]))   #requirement terpenuhi, saldo berkurang
+                            #mengisi riwayat pembelian tiket
+                            j = 0
+                            while True:
+                                if array_pembelian_tiket[j] == '*':
+                                    array_pembelian_tiket[j] = [user[3], tanggal, id, str(tiket)] #memasukkan riwayat pembelian tiket
+                                    break
+                                else:
+                                    j+=1
+                            #mengisi riwayat kepemilikan tiket
+                            j = 0
+                            while array_kepemilikan_tiket != '*':
+                                if (array_kepemilikan_tiket[j][0] == user[3]) and (array_kepemilikan_tiket[j][1] == id) :   #jika ternyata pengguna sudah memiliki tiket wahana dan ingin menambah
+                                    array_kepemilikan_tiket[j] = [user[3], id, str(int(array_kepemilikan_tiket[j][3]) + tiket)] 
+                                    break
+                                else:
+                                    j+=1
+                            else:       #jika pengguna belum memiliki tiket wahan tersebut
+                                array_kepemilikan_tiket[j] = [user[3], id, str(tiket)]
+                            print(f"Selamat bermain di {array_wahana[i][1]}.")
+                            break
+                        else:
+                            print("Saldo Anda tidak cukup.")
+                            print("Silakan mengisi saldo Anda.")
+                            break    
                 else:
                     print("Anda tidak memenuhi persyaratan untuk memainkan wahana ini.")
                     print("Silakan menggunakan wahana lain yang tersedia.")
