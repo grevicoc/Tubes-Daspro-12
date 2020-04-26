@@ -106,3 +106,4 @@ def cari_wahana():
                         i+=1
     if mark == False:
         print("Tidak ada wahana yang sesuai dengan pencarian kamu.")
+
