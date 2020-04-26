@@ -10,6 +10,6 @@ def Sign_Up():
             array_user[i] = [nama,birth,tinggi,username,password,"guest",0,"no"]
             a = i
         elif (i > a):
-            array_used[i] = "*"
+            array_user[i] = "*"
 
     print("Selamat menjadi pemain,",nama,". Selamat bermain.")
