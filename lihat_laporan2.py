@@ -93,122 +93,27 @@ def Kritik_dan_Saran() :
 # lihat_laporan
 
 def Lihat_Kritik_dan_Saran():
-    e=0 # Menghitung jumlah Neff dalam array
+    e=0
     while(array_kritik_saran[e][0]!='*'):
         e=e+1
         
-    for k in range (1,e): # Mengurutkan berdasarkan karakter pertama dari ID Wahana dengan Insertion Sort
-        temp=array_kritik_saran[k][2][0]
+    for k in range (1,e):
+        temp=array_kritik_saran[k][2]
         tempgeser=array_kritik_saran[k]
         l=k-1
-        while(temp<array_kritik_saran[l][2][0] and l>0):
+        while(temp<array_kritik_saran[l][2] and l>0):
             array_kritik_saran[l+1]=array_kritik_saran[l]
             l=l-1
-        if(temp>=array_kritik_saran[l][2][0]):
+        if(temp>=array_kritik_saran[l][2]):
             array_kritik_saran[l+1]=tempgeser
         elif(l==0):
             array_kritik_saran[l+1]=array_kritik_saran[l]
             array_kritik_saran[l]=tempgeser
-    
-    for k in range (1,e): # Mengurutkan data yang memiliki karakter pertama yang sama berdasarkan karakter kedua dari ID Wahana dengan Insertion Sort
-        temp=array_kritik_saran[k][2][1]
-        temp1=array_kritik_saran[k][2][0]
-        tempgeser=array_kritik_saran[k]
-        l=k-1
-        if(temp1==array_kritik_saran[l][2][0]): # Mengurutkan data yang memiliki karakter pertama dan kedua yang sama berdasarkan karakter ketiga dari ID Wahana dengan Insertion Sort
-            while(temp<array_kritik_saran[l][2][1] and l>0):
-                array_kritik_saran[l+1]=array_kritik_saran[l]
-                l=l-1
-            if(temp>=array_kritik_saran[l][2][1]):
-                array_kritik_saran[l+1]=tempgeser
-            elif(l==0):
-                array_kritik_saran[l+1]=array_kritik_saran[l]
-                array_kritik_saran[l]=tempgeser
 
-                
-    for k in range (1,e): # Mengurutkan data yang memiliki karakter pertama dan kedua yang sama berdasarkan karakter ketiga dari ID Wahana dengan Insertion Sort
-        temp=array_kritik_saran[k][2][2]
-        temp1=array_kritik_saran[k][2][1]
-        temp2=array_kritik_saran[k][2][0]
-        tempgeser=array_kritik_saran[k]
-        l=k-1
-        n=0
-        while(temp<array_kritik_saran[l][2][2] and l>0 and temp1==array_kritik_saran[l][2][1] and temp2==array_kritik_saran[l][2][0]):
-            array_kritik_saran[l+1]=array_kritik_saran[l]
-            l=l-1
-            n=n+1
-        if(temp>=array_kritik_saran[l+1][2][2]):
-            array_kritik_saran[l+1]=tempgeser
-        elif(n>0):
-            array_kritik_saran[l+1]=array_kritik_saran[l]
-            array_kritik_saran[l+1]=tempgeser
-
-
-    for k in range (1,e): # Mengurutkan data yang memiliki karakter pertama, kedua, dan ketiga yang sama berdasarkan karakter keempat dari ID Wahana dengan Insertion Sort
-        temp=array_kritik_saran[k][2][3]
-        temp1=array_kritik_saran[k][2][2]
-        temp2=array_kritik_saran[k][2][1]
-        temp3=array_kritik_saran[k][2][0]
-        tempgeser=array_kritik_saran[k]
-        l=k-1
-        n=0
-        while(temp<array_kritik_saran[l][2][3] and l>0 and temp1==array_kritik_saran[l][2][2] and temp2==array_kritik_saran[l][2][1] and temp3==array_kritik_saran[l][2][0]):
-            array_kritik_saran[l+1]=array_kritik_saran[l]
-            l=l-1
-            n=n+1
-        if(temp>=array_kritik_saran[l+1][2][3]):
-            array_kritik_saran[l+1]=tempgeser
-        elif(n>0):
-            array_kritik_saran[l+1]=array_kritik_saran[l]
-            array_kritik_saran[l+1]=tempgeser
-
-
-    for k in range (1,e): # Mengurutkan data yang memiliki karakter pertama, kedua, ketiga, dan keempat yang sama berdasarkan karakter kelima dari ID Wahana dengan Insertion Sort
-        temp=array_kritik_saran[k][2][4]
-        temp1=array_kritik_saran[k][2][3]
-        temp2=array_kritik_saran[k][2][2]
-        temp3=array_kritik_saran[k][2][1]
-        temp4=array_kritik_saran[k][2][0]
-        tempgeser=array_kritik_saran[k]
-        l=k-1
-        n=0
-        while(temp<array_kritik_saran[l][2][4] and l>0 and temp1==array_kritik_saran[l][2][3] and temp2==array_kritik_saran[l][2][2] and temp3==array_kritik_saran[l][2][1] and temp4==array_kritik_saran[l][2][0]):
-            array_kritik_saran[l+1]=array_kritik_saran[l]
-            l=l-1
-            n=n+1
-        if(temp>=array_kritik_saran[l+1][2][4]):
-            array_kritik_saran[l+1]=tempgeser
-        elif(n>0):
-            array_kritik_saran[l+1]=array_kritik_saran[l]
-            array_kritik_saran[l+1]=tempgeser
-
-
-    for k in range (1,e): # Mengurutkan data yang memiliki karakter pertama, kedua, ketiga, keempat, dan kelima yang sama berdasarkan karakter keenam dari ID Wahana dengan Insertion Sort
-        temp=array_kritik_saran[k][2][5]
-        temp1=array_kritik_saran[k][2][4]
-        temp2=array_kritik_saran[k][2][3]
-        temp3=array_kritik_saran[k][2][2]
-        temp4=array_kritik_saran[k][2][1]
-        temp5=array_kritik_saran[k][2][0]
-        tempgeser=array_kritik_saran[k]
-        l=k-1
-        n=0
-        while(temp<array_kritik_saran[l][2][5] and l>0 and temp1==array_kritik_saran[l][2][4] and temp2==array_kritik_saran[l][2][3] and temp3==array_kritik_saran[l][2][2] and temp4==array_kritik_saran[l][2][1] and temp5==array_kritik_saran[l][2][0]):
-            array_kritik_saran[l+1]=array_kritik_saran[l]
-            l=l-1
-            n=n+1
-        if(temp>=array_kritik_saran[l+1][2][5]):
-            array_kritik_saran[l+1]=tempgeser
-        elif(n>0):
-            array_kritik_saran[l+1]=array_kritik_saran[l]
-            array_kritik_saran[l+1]=tempgeser
-    
     print("Kritik dan saran:")
     for l in range (e):
         if(array_kritik_saran[l][2]!="ID_Wahana" and array_kritik_saran[l][1]!="Tanggal_Kritik" and array_kritik_saran[l][0]!="Username" and array_kritik_saran[l][3]!="Isi_Kritik"):
             print(("{} | {} | {} | {}".format(array_kritik_saran[l][2],array_kritik_saran[l][1],array_kritik_saran[l][0],array_kritik_saran[l][3])))
-
-Lihat_Kritik_dan_Saran()
 
 # tambah_wahana
 
