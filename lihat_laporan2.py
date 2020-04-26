@@ -232,13 +232,19 @@ def tambah_wahana():
 # upgrade_gold
 
 def upgrade_gold():
-    userinput=str(input("Masukkan username yang ingin di-upgrade:")) # Memasukkan informasi username yang ingin diupgrade
-    
+    userinput=str(input("Masukkan username yang ingin di-upgrade <Upgrade Dikenai Biaya Sebesar 30% Saldo Akun Terkait> : "))
+
+    cek=0
     k=0
     while(array_user[k]!='*'):   
         if(array_user[k][3]==userinput):
-            array_user[k][6]=7/10*array_user[k][6] # Memotong saldo username yang bersangkutan sebesar 30% saldo untuk upgrade akun
+            array_user[k][6]=7/10*int(array_user[k][6]) # Memotong saldo username yang bersangkutan sebesar 30% saldo untuk upgrade akun
             array_user[k][7]='yes' # Menandai akun sebagai akun gold
+            cek=1
+        print(array_user[k][7])
         k=k+1
         
-    print("Akun Anda telah diupgrade.")
+    if(cek==1):    
+        print("Akun Anda telah diupgrade.")
+    else:
+        print("Maaf Username tidak ada di database. Pastikan Kembali Username yang dimasukkan")
