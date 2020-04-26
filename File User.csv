@@ -1,6 +1,6 @@
-Nama,Tanggal_Lahir,Tinggi_Badan,Username,Password,Role,Saldo
-Muhammad Tito Prakasa,11 April 2002,168,grevicoc,110402,admin,0
-Emerald Furqon,14 Oktober 2001,175,emeraldfrqn,141001,guest,100000
-Kevin Galileo,18 Desember 1997,178,galileok,111471,guest,20000
-Farrel Giovani,10 Januari 1995,165,ganirel,190761,guest,40000
-Ali Borme,12 November 2005,155,bebekali,123456,guest,50000
+Nama,Tanggal_Lahir,Tinggi_Badan,Username,Password,Role,Saldo,Status_Gold
+Muhammad Tito Prakasa,11 April 2002,168,grevicoc,110402,admin,0,no
+Emerald Furqon,14 Oktober 2001,175,emeraldfrqn,141001,guest,100000,no
+Kevin Galileo,18 Desember 1997,178,galileok,111471,guest,20000,no
+Farrel Giovani,10 Januari 1995,165,ganirel,190761,guest,40000,no
+Ali Borme,12 November 2005,155,bebekali,123456,guest,50000,no
