@@ -4,7 +4,7 @@ def Sign_Up():
     tinggi = int(input("Masukan tinggi badan pemain (cm):"))
     username = input("Masukan username pemain:")
     password = input("Masukan password pemain:")
-    a = 0
+    a = 99
     for i in range(30):
         if array_user[i] == "*" :
             array_user[i] = [nama,birth,tinggi,username,password,"guest",0,"no"]
