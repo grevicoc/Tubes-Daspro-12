@@ -7,9 +7,10 @@ def Sign_Up():
     a = 99
     for i in range(30):
         if array_user[i] == "*" :
-            array_user[i] = [nama,birth,tinggi,username,password,"guest",0,"no"]
-            a = i
-        elif (i > a):
-            array_user[i] = "*"
+            if (i > a):
+                array_user[i] = "*"
+            else:
+                array_user[i] = [nama,birth,tinggi,username,password,"guest",0,"no"]
+                a = i
 
     print("Selamat menjadi pemain,",nama,". Selamat bermain.")
