@@ -46,7 +46,7 @@ def Refund() :
         b=b+1
 
     k=0
-    while(array_user[k]!='*'):   # Mengembalikan uang kepada Saldo penguna
+    while(array_user[k]!='*'):   # Menandai username pengguna pada array user
             if(array_user[k][3]==user):
                 d=k
             k=k+1
